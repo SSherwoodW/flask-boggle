@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Boggle{% endblock %}
+
+{% block content %}
+    <h1>Boggle!</h1>
+    <table class="board">
+        {% for i in board %}
+            <tr>
+                {% for y in i %}
+                <td>{{y}}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <form action="" method="post" class="add-word">
+        Word:
+        <input type="text" class="word" autofocus>
+        <button>Add</button>
+    </form>
+{% endblock %}
