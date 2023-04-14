@@ -1,4 +1,4 @@
-$(".word").on("submit", handleSubmit);
+
 
 async function handleSubmit(evt) {
     evt.preventDefault();
@@ -12,3 +12,4 @@ async function handleSubmit(evt) {
     console.log(res);
 }
 
+$(".word").on("submit", handleSubmit);

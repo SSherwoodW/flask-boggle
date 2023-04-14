@@ -13,7 +13,7 @@ debug = DebugToolbarExtension(app)
 
 boggle_game = Boggle()
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/")
 def show_boggle():
     board = boggle_game.make_board()
     session['board'] = board
