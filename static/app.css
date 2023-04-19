@@ -1,3 +1,29 @@
+#title {
+    text-align: center;
+}
+
+.variables {
+    text-align: center;
+    font-size: large;
+}
+
+#timer {
+    
+    
+    padding-top: 2%;
+    font-size: 25px;
+    font-weight: bolder;
+    border: 1.2px solid black;
+    border-radius: 100%;
+    width: 2.65em;
+    height: 2em;
+}
+
+.board {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 td {
     text-align: center;
     font-size: 4em;
@@ -5,4 +31,17 @@ td {
     border-radius: 10%;
     width: 1.2em;
     height: 1em;
+}
+
+form {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#response {
+    background-color: rgba(220, 0, 0, 0.1);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 5%;
 }

@@ -15,13 +15,27 @@ boggle_game = Boggle()
 
 @app.route("/")
 def show_boggle():
+    """show board."""
     board = boggle_game.make_board()
     session['board'] = board
-    return render_template("index.html", board=board)
+    highscore = session.get("highscore", 0)
+    numplays = session.get('numplays', 0)
+    return render_template("index.html", board=board, highscore=highscore, numplays=numplays)
 
-@app.route("/check-word", methods=["POST"])
+@app.route("/check-word", methods=["GET"])
 def check_word():
+    """Check if word is in the dictionary."""
     word = request.args['word']
     board = session['board']
     response = boggle_game.check_valid_word(board, word)
     return jsonify({"response": response})
+
+@app.route("/end-game", methods=["POST"])
+def end_game():
+    """Update high score if new score is greater than, & update numplays."""
+    score = request.json["score"]
+    highscore = session.get("highscore", 0)
+    numplays = session.get("numplays", 0)
+    session["highscore"] = max(score, highscore)
+    session["numplays"] = numplays + 1
+    return 'game over'
